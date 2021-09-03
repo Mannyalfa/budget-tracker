@@ -47,15 +47,15 @@ After cloning the repository, execute the following in the Command Line:
 	$ npm start
   
 ## Images
-Offline usage:
-![screenshot]()
+Screenshot:
+![screenshot](https://github.com/Mannyalfa/budget-tracker/blob/main/public/assets/screenshot.jpg)
 
+Offline usage:
+![screenshot](https://github.com/Mannyalfa/budget-tracker/blob/main/public/assets/screenshot-offline.jpg)
 
 
 ## Deployed-URL
-https://
-
-
+https://mannys-budget-tracker.herokuapp.com/
     
 
 ## Credits

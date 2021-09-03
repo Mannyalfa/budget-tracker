@@ -1,6 +1,6 @@
 
 let db;
-const request = indexedDB.open('budget_tracker', 1);
+const request = indexedDB.open('budget_tracker', 1); 
 
 // track database version changes
 request.onupgradeneeded = function (event) {
@@ -39,7 +39,7 @@ function uploadTransaction() {
 
     getAll.onsuccess = function () {
         if (getAll.result.length > 0) {
-            fetch('/api/transaction', {
+            fetch('/api/transaction/bulk', {
                 method: 'POST',
                 body: JSON.stringify(getAll.result),
                 headers: {
@@ -48,19 +48,16 @@ function uploadTransaction() {
                 }
             })
                 .then(response => response.json())
-                .then(serverResponse => {
-                    if (serverResponse.message) {
-                        throw new Error(serverResponse);
-                    }
-                    const transaction = db.transaction(['new_transaction'], 'readwrite');
-                    const budgetObjectStore = transaction.objectStore('new_transaction');
-                    budgetObjectStore.clear();
-
-                    alert('All saved transactions has been submitted!');
-                })
-                .catch(err => {
-                    console.log(err);
+                .then(() => {
+                    // delete records if successful
+                    const transaction = db.transaction(["pending"], "readwrite");
+                    const store = transaction.objectStore("pending");
+                    store.clear();
                 });
+
+                .catch (err => {
+                console.log(err);
+            });
         }
     }
 }
