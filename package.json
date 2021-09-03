@@ -1,5 +1,5 @@
 {
-  "name": "budget-app",
+  "name": "budget-tracker",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -21,7 +21,8 @@
   "dependencies": {
     "compression": "^1.7.4",
     "express": "^4.17.1",
+    "mogoose": "0.0.1-security",
     "mongoose": "^5.13.8",
-    "morgan": "^1.9.1"
+    "morgan": "^1.10.0"
   }
 }
