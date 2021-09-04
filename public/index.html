@@ -19,6 +19,7 @@
 <div class="bg-image" style="
 background-image: url('./assets/dollars.jpg');
 height: 100vh;
+width: 100vw;
 background-repeat: no-repeat;">
 <!-- Background image -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -33,7 +34,7 @@ background-repeat: no-repeat;">
           </div>
 
           <div class="form">
-            <input type="text" id="t-name" placeholder="Transaction type & notes" />
+            <input type="text" id="t-name" placeholder="Transaction type & details" />
             <input type="number" min="0" id="t-amount" placeholder="Amount" />
             <button id="add-btn"><i class="fa fa-plus buttons"></i> Add Funds</button>
             <button id="sub-btn"><i class="fa fa-minus"></i> Subtract Funds</button>
@@ -57,6 +58,8 @@ background-repeat: no-repeat;">
       </div>
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
         <script src="js/index.js"></script>
+        <script src="js/idb.js"></script>
 </body>
+
 
 </html>

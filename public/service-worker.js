@@ -56,7 +56,6 @@ self.addEventListener('activate', function (evt) {
 
 // Respond with cached resources
 
-Andrew(TA)  3: 47 PM
 // Intercept fetch requests
 self.addEventListener('fetch', function (evt) {
     if (evt.request.url.includes('/api/')) {

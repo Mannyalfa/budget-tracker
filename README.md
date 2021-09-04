@@ -50,7 +50,7 @@ After cloning the repository, execute the following in the Command Line:
 Screenshot:
 ![screenshot](https://github.com/Mannyalfa/budget-tracker/blob/main/public/assets/screenshot.jpg)
 
-Offline usage:
+Offline transactions loading on network connect:
 ![screenshot](https://github.com/Mannyalfa/budget-tracker/blob/main/public/assets/screenshot-offline.jpg)
 
 
