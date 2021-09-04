@@ -1,15 +1,12 @@
-
 let db;
-const request = indexedDB.open('budget_tracker', 1); 
+const request = indexedDB.open('budget_tracker', 1);
 
-// track database version changes
 request.onupgradeneeded = function (event) {
     const db = event.target.result;
     db.createObjectStore('new_transaction', { autoIncrement: true });
 };
 
 request.onsuccess = function (event) {
-
     db = event.target.result;
     if (navigator.onLine) {
         uploadTransaction();
@@ -21,7 +18,6 @@ request.onerror = function (event) {
 };
 
 
-// submit transaction offline
 function saveRecord(record) {
     const transaction = db.transaction(['new_transaction'], 'readwrite');
 
@@ -39,7 +35,7 @@ function uploadTransaction() {
 
     getAll.onsuccess = function () {
         if (getAll.result.length > 0) {
-            fetch('/api/transaction/bulk', {
+            fetch('/api/transaction', {
                 method: 'POST',
                 body: JSON.stringify(getAll.result),
                 headers: {
@@ -48,17 +44,21 @@ function uploadTransaction() {
                 }
             })
                 .then(response => response.json())
-                .then(() => {
-                    // delete records if successful
-                    const transaction = db.transaction(["pending"], "readwrite");
-                    const store = transaction.objectStore("pending");
-                    store.clear();
-                });
+                .then(serverResponse => {
+                    if (serverResponse.message) {
+                        throw new Error(serverResponse);
+                    }
+                    const transaction = db.transaction(['new_transaction'], 'readwrite');
+                    const budgetObjectStore = transaction.objectStore('new_transaction');
+                    budgetObjectStore.clear();
 
-                .catch (err => {
-                console.log(err);
-            });
+                    alert('Transactions submitted');
+                })
+                .catch(err => {
+                    console.log(err);
+                });
         }
     }
 }
+
 window.addEventListener('online', uploadTransaction);

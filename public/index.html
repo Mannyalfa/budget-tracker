@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,36 +13,50 @@
 
   <title>Budget Tracker</title>
 </head>
+
 <body>
-  <div class="wrapper">
-    <div class="total">
-      <div class="total">Your total is: $<span id="total">0</span></div>
-    </div>
+  <!-- Background image -->
+<div class="bg-image" style="
+background-image: url('./assets/dollars.jpg');
+height: 100vh;
+background-repeat: no-repeat;">
+<!-- Background image -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand">
 
-    <div class="form">
-      <input type="text" id="t-name" placeholder="Name of transaction" />
-      <input type="number" min="0" id="t-amount" placeholder="Transaction amount" />
-      <button id="add-btn"><i class="fa fa-plus buttons"></i> Add Funds</button>
-      <button id="sub-btn"><i class="fa fa-minus"></i> Subtract Funds</button>
-      <p class="error"></p>
-    </div>
+        PERSONAL BUDGET TRACKER
+        </a>
+        <div class="wrapper">
+          <div class="total">
+            <div class="total">Current Balance: $<span id="total">0</span></div>
+          </div>
 
-    <div class="transactions">
-      <table>
-        <thead>
-          <th>Transaction</th>
-          <th>Amount</th>
-        </thead>
-        <tbody id="tbody">
-          
-        </tbody>
-      </table>
-    </div>
-    
-    <canvas id="myChart"></canvas>
-  </div>
+          <div class="form">
+            <input type="text" id="t-name" placeholder="Transaction type & notes" />
+            <input type="number" min="0" id="t-amount" placeholder="Amount" />
+            <button id="add-btn"><i class="fa fa-plus buttons"></i> Add Funds</button>
+            <button id="sub-btn"><i class="fa fa-minus"></i> Subtract Funds</button>
+            <p class="error"></p>
+          </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-  <script src="js/index.js"></script>
+          <div class="transactions">
+            <table>
+              <thead>
+                <th>Transaction</th>
+                <th>Amount</th>
+              </thead>
+              <tbody id="tbody">
+
+              </tbody>
+            </table>
+          </div>
+
+          <canvas id="myChart"></canvas>
+        </div>
+      </div>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <script src="js/index.js"></script>
 </body>
+
 </html>

@@ -12,8 +12,8 @@
     "type": "git",
     "url": "git+https://github.com/coding-boot-camp/unit18hw.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "archana-nagaraj",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/coding-boot-camp/unit18hw/issues"
   },
@@ -21,8 +21,8 @@
   "dependencies": {
     "compression": "^1.7.4",
     "express": "^4.17.1",
-    "mogoose": "0.0.1-security",
-    "mongoose": "^5.13.8",
-    "morgan": "^1.10.0"
+    "mongoose": "^5.5.15",
+    "morgan": "^1.9.1",
+    "webpack-pwa-manifest": "^4.3.0"
   }
 }

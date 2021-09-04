@@ -1,6 +1,12 @@
 body {
   font-size: 120%;
   font-family: Arial;
+  ba
+}
+
+.navbar-brand {
+  color: blue;
+  font-size: larger;
 }
 
 button, input {
@@ -13,13 +19,21 @@ table {
 }
 
 td, th {
-  border: 1px solid #dddddd;
+  border: 1px solid darkgray;
   text-align: left;
   padding: 8px;
 }
 
+th {
+  background-color: #dddddd; 
+}
+
 tr:nth-child(even) {
   background-color: #dddddd;
+}
+
+tr:nth-child(odd) {
+  background-color: #FFFFFF;
 }
 
 .error {
